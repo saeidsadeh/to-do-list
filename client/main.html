@@ -1,0 +1,52 @@
+<body>
+  <div class="container">
+    <header>
+      <h1>Todo List ({{incompleteCount}})</h1>
+
+
+ 
+
+
+
+    <div id="loader">
+    <div id="box"></div>
+    <div id="hill"></div>
+    </div>
+
+
+    </header>
+      <label class="hide-completed">
+        <input type="checkbox" />
+        Hide Completed Tasks
+      </label>
+
+      <form class="new-task">
+        <input type="text" name="text" placeholder="Type to add new tasks" />
+      </form>
+ 
+    <ul>
+      {{#each tasks}}
+        {{> task}}
+      {{/each}}
+    </ul>
+  </div>
+
+     <div class="parallax-container">
+      <div class="parallax"><img src="https://upload.wikimedia.org/wikipedia/en/6/62/Kennisis_sunset.jpg"></div>
+    </div>
+
+</body>
+ 
+
+
+ <template name="task">
+  <li class="{{#if checked}}checked{{/if}}">
+    <button class="delete">&times;</button>
+ 
+    <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
+ 
+    <span class="text">{{text}}</span>
+  </li>
+</template>
+
+
